@@ -2,6 +2,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 import { useAuth } from "./AuthContext";
 
 const CartContext = createContext(null);
+const API_BASE = "https://backend-production-5033.up.railway.app/";
 
 export const CartProvider = ({ children }) => {
 	const [cartItems, setCartItems] = useState([]);
@@ -17,7 +18,7 @@ export const CartProvider = ({ children }) => {
 			}
 			setLoading(true);
 			try {
-				const response = await fetch("/api/cart", {
+				const response = await fetch(`${API_BASE}/api/cart`, {
 					headers: { Authorization: `Bearer ${token}` },
 				});
 				if (response.ok) {
