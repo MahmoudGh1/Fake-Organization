@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import * as productService from "./product.service";
+import * as productService from "./product.service.js";
 
 // ─── GET /api/products ────────────────────────────────────────────────────────
 export const listProducts = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
