@@ -4,6 +4,8 @@ import { useAuth } from "../../context/AuthContext";
 import { motion } from "framer-motion";
 import { UserPlus, Mail, Lock, User, AlertCircle } from "lucide-react";
 
+const API_BASE = "https://backend-production-5033.up.railway.app";
+
 export const RegisterPage = () => {
 	const { login } = useAuth();
 	const navigate = useNavigate();
@@ -20,7 +22,7 @@ export const RegisterPage = () => {
 
 		try {
 			// Connects directly to Claude's POST /api/auth/register route module
-			const response = await fetch("/api/auth/register", {
+			const response = await fetch(`${API_BASE}/api/auth/register`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ name, email, password }),
