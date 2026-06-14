@@ -3,14 +3,14 @@ import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
-import { connectDB } from "./config/db";
-import { setupSwagger } from "./config/swagger";
-import { errorHandler } from "./middlewares/error.middleware";
+import { connectDB } from "./config/db.js";
+import { setupSwagger } from "./config/swagger.js";
+import { errorHandler } from "./middlewares/error.middleware.js";
 
 // Route imports
-import authRoutes from "./modules/auth/auth.routes";
-import productRoutes from "./modules/products/product.routes";
-import orderRoutes from "./modules/orders/order.routes";
+import authRoutes from "./modules/auth/auth.routes.js";
+import productRoutes from "./modules/products/product.routes.js";
+import orderRoutes from "./modules/orders/order.routes.js";
 
 dotenv.config();
 
