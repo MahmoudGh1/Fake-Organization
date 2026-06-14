@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import type { QueryFilter } from "mongoose";
-import Product, { IProduct } from "../../models/Product.model";
-import { AppError } from "../../middlewares/error.middleware";
+import Product, { IProduct } from "../../models/Product.model.js";
+import { AppError } from "../../middlewares/error.middleware.js";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
