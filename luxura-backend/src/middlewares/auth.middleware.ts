@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import User from "../models/User.model.js";
 import { AppError } from "./error.middleware.js";
-import { verifyApiKey, extractPrefix } from "../utils/apiKey";
+import { verifyApiKey, extractPrefix } from "../utils/apiKey.js";
 
 // ─── JWT Payload Shape ───────────────────────────────────────────────────────
 interface JwtPayload {
