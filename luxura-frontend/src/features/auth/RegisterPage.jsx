@@ -95,7 +95,7 @@ export const RegisterPage = () => {
 
 					<button type="submit" disabled={isSubmitting} className="w-full h-12 bg-luxury-dark text-luxury-bg text-xs font-bold uppercase tracking-widest flex items-center justify-center space-x-2 border border-luxury-dark hover:bg-transparent hover:text-luxury-dark transition-all duration-300 disabled:opacity-50 rounded-sm pt-0.5">
 						<UserPlus size={14} />
-						<span>{isSubmitting ? "Injecting Document..." : "Create Account"}</span>
+						<span>{isSubmitting ? "Creating Account" : "Login in"}</span>
 					</button>
 				</form>
 
