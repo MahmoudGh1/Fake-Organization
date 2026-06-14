@@ -97,7 +97,7 @@ export const LoginPage = () => {
 
 				<div className="text-center pt-2">
 					<p className="text-xs text-luxury-muted font-light">
-						New to Luxura?{" "}
+						New to Gunuo?{" "}
 						<Link to="/register" className="text-luxury-dark font-semibold border-b border-luxury-dark hover:text-luxury-gold hover:border-luxury-gold transition-colors ml-1">
 							Create Credentials
 						</Link>
