@@ -21,7 +21,7 @@ export const Navbar = () => {
 			<div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 				{/* Brand Logo */}
 				<Link to="/" className="font-serif text-2xl font-bold tracking-widest text-luxury-dark hover:opacity-80 transition-opacity">
-					LUXURA
+					Gunuo
 				</Link>
 
 				{/* Desktop Navigation */}
