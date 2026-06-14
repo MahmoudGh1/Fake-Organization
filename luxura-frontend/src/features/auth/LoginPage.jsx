@@ -4,6 +4,8 @@ import { useAuth } from "../../context/AuthContext";
 import { motion } from "framer-motion";
 import { LogIn, Mail, Lock, AlertCircle } from "lucide-react";
 
+const API_BASE = "https://backend-production-5033.up.railway.app";
+
 export const LoginPage = () => {
 	const { login } = useAuth();
 	const navigate = useNavigate();
@@ -23,7 +25,7 @@ export const LoginPage = () => {
 
 		try {
 			// Connects directly to Claude's POST /api/auth/login route module
-			const response = await fetch("/api/auth/login", {
+			const response = await fetch(`${API_BASE}/api/auth/login`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ email, password }),
