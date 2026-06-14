@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 import { useAuth } from "./AuthContext";
 
 const CartContext = createContext(null);
-const API_BASE = "https://backend-production-5033.up.railway.app/";
+const API_BASE = "https://backend-production-5033.up.railway.app";
 
 export const CartProvider = ({ children }) => {
 	const [cartItems, setCartItems] = useState([]);
@@ -50,7 +50,7 @@ export const CartProvider = ({ children }) => {
 		if (!token) return; // If guest, keeps local state until login
 
 		try {
-			await fetch("/api/cart/add", {
+			await fetch(`${API_BASE}/api/cart/add`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -75,7 +75,7 @@ export const CartProvider = ({ children }) => {
 		if (!token) return;
 
 		try {
-			await fetch(`/api/cart/update`, {
+			await fetch(`${API_BASE}/api/cart/update`, {
 				method: "PUT",
 				headers: {
 					"Content-Type": "application/json",
@@ -95,7 +95,7 @@ export const CartProvider = ({ children }) => {
 		if (!token) return;
 
 		try {
-			await fetch(`/api/cart/remove/${productId}`, {
+			await fetch(`${API_BASE}/api/cart/remove/${productId}`, {
 				method: "DELETE",
 				headers: { Authorization: `Bearer ${token}` },
 			});
@@ -110,7 +110,7 @@ export const CartProvider = ({ children }) => {
 		if (!token) return;
 
 		try {
-			await fetch("/api/cart/clear", {
+			await fetch(`${API_BASE}/api/cart/clear`, {
 				method: "DELETE",
 				headers: { Authorization: `Bearer ${token}` },
 			});
