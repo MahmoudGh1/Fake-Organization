@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import * as orderService from "./order.service.js";
+import * as orderService from "./order.service";
 
 // ─── POST /api/orders ─────────────────────────────────────────────────────────
 export const placeOrder = async (req: Request, res: Response, next: NextFunction): Promise<void> => {

@@ -1,9 +1,9 @@
 import { Router } from "express";
-import * as productController from "./product.controller.js";
-import { protect } from "../../middlewares/auth.middleware.js";
-import { requireAdmin } from "../../middlewares/admin.middleware.js";
-import { validate } from "../../middlewares/validate.middleware.js";
-import { createProductValidator, updateProductValidator, listProductsValidator, productIdValidator } from "./product.validator.js";
+import * as productController from "./product.controller";
+import { protect } from "../../middlewares/auth.middleware";
+import { requireAdmin } from "../../middlewares/admin.middleware";
+import { validate } from "../../middlewares/validate.middleware";
+import { createProductValidator, updateProductValidator, listProductsValidator, productIdValidator } from "./product.validator";
 
 const router = Router();
 

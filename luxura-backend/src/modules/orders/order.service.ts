@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
-import Order, { IOrder, IOrderItem } from "../../models/Order.model.js";
-import Product from "../../models/Product.model.js";
-import { AppError } from "../../middlewares/error.middleware.js";
-import { adjustStock } from "../products/product.service.js";
+import Order, { IOrder, IOrderItem } from "../../models/Order.model";
+import Product from "../../models/Product.model";
+import { AppError } from "../../middlewares/error.middleware";
+import { adjustStock } from "../products/product.service";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 

@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
-import User, { IUser } from "../../models/User.model.js";
-import { AppError } from "../../middlewares/error.middleware.js";
-import { generateApiKey, extractPrefix } from "../../utils/apiKey.js";
+import User, { IUser } from "../../models/User.model";
+import { AppError } from "../../middlewares/error.middleware";
+import { generateApiKey, extractPrefix } from "../../utils/apiKey";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
