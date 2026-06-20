@@ -1,9 +1,9 @@
 import { Router } from "express";
-import * as orderController from "./order.controller";
-import { protect } from "../../middlewares/auth.middleware";
-import { requireAdmin } from "../../middlewares/admin.middleware";
-import { validate } from "../../middlewares/validate.middleware";
-import { placeOrderValidator, updateOrderStatusValidator, orderIdValidator } from "./order.validator";
+import * as orderController from "./order.controller.js";
+import { protect } from "../../middlewares/auth.middleware.js";
+import { requireAdmin } from "../../middlewares/admin.middleware.js";
+import { validate } from "../../middlewares/validate.middleware.js";
+import { placeOrderValidator, updateOrderStatusValidator, orderIdValidator } from "./order.validator.js";
 
 const router = Router();
 

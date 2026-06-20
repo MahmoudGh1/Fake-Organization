@@ -6,7 +6,7 @@ export const Footer = () => {
 			<div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-luxury-bg/10 pb-12">
 				{/* Brand Summary */}
 				<div className="space-y-4">
-					<h3 className="font-serif text-xl font-bold tracking-widest text-white">LUXURA</h3>
+					<h3 className="font-serif text-xl font-bold tracking-widest text-white">Gunuo</h3>
 					<p className="text-xs text-luxury-bg/60 leading-relaxed max-w-xs">Architecting high-end luxury interiors with absolute geometric precision and master craftsmanship.</p>
 				</div>
 
@@ -58,7 +58,7 @@ export const Footer = () => {
 			</div>
 
 			<div className="max-w-7xl mx-auto px-6 pt-6 flex flex-col sm:flex-row justify-between items-center text-[11px] text-luxury-bg/40 space-y-2 sm:space-y-0">
-				<span>&copy; {new Date().getFullYear()} LUXURA Inc. All Rights Reserved.</span>
+				<span>&copy; {new Date().getFullYear()} Gunuo Inc. All Rights Reserved.</span>
 				<span className="font-mono tracking-tighter">API Context Node Verified</span>
 			</div>
 		</footer>

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Key, ShieldCheck, Layers, RefreshCw } from "lucide-react";
 import { Button } from "../../components/common/Button";
 
+const API_BASE = "https://backend-production-5033.up.railway.app";
+
 export const DeveloperAPI = ({ token }) => {
 	const [generatedKey, setGeneratedKey] = useState("");
 	const [generatingKey, setGeneratingKey] = useState(false);
@@ -10,7 +12,7 @@ export const DeveloperAPI = ({ token }) => {
 	const generateDeveloperKey = async () => {
 		setGeneratingKey(true);
 		try {
-			const response = await fetch("/api/auth/api-keys", {
+			const response = await fetch(`${API_BASE}/api/auth/api-keys`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

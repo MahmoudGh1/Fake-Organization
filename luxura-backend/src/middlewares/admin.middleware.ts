@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { AppError } from "./error.middleware";
+import { AppError } from "./error.middleware.js";
 
 /**
  * Must be chained AFTER protect middleware.

@@ -4,12 +4,15 @@ import { useAuth } from "../../context/AuthContext";
 import { motion } from "framer-motion";
 import { LogIn, Mail, Lock, AlertCircle } from "lucide-react";
 
+const API_BASE = "https://backend-production-5033.up.railway.app";
+
 export const LoginPage = () => {
 	const { login } = useAuth();
 	const navigate = useNavigate();
 	const location = useLocation();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [name, setName] = useState("")
 	const [error, setError] = useState("");
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -23,7 +26,7 @@ export const LoginPage = () => {
 
 		try {
 			// Connects directly to Claude's POST /api/auth/login route module
-			const response = await fetch("/api/auth/login", {
+			const response = await fetch(`${API_BASE}/api/auth/login`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ email, password }),
@@ -45,7 +48,7 @@ export const LoginPage = () => {
 
 			// Sandbox Fallback: Keep the presentation running flawlessly even if backend is offline
 			setTimeout(() => {
-				const mockUser = { id: "mock-123", name: "Marwan Shahata", email: email, role: "customer" };
+				const mockUser = { id: "mock-123", name: name, email: email, role: "customer" };
 				login(mockUser, "mock-jwt-token-xyz-999");
 				navigate(from, { replace: true });
 			}, 1500);
@@ -95,7 +98,7 @@ export const LoginPage = () => {
 
 				<div className="text-center pt-2">
 					<p className="text-xs text-luxury-muted font-light">
-						New to Luxura?{" "}
+						New to Gunuo?{" "}
 						<Link to="/register" className="text-luxury-dark font-semibold border-b border-luxury-dark hover:text-luxury-gold hover:border-luxury-gold transition-colors ml-1">
 							Create Credentials
 						</Link>

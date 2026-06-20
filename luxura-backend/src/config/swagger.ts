@@ -1,6 +1,6 @@
 import { Application } from "express";
 import swaggerUi from "swagger-ui-express";
-import { swaggerSpec } from "./swagger.spec";
+import { swaggerSpec } from "./swagger.spec.js";
 
 export const setupSwagger = (app: Application): void => {
 	// ── Serve raw JSON spec (useful for external tooling / Postman import) ──

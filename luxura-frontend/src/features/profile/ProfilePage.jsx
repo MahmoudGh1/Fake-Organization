@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { User, ShoppingBag, Terminal, Key, ShieldCheck, RefreshCw, Trash2, Layers, CheckCircle } from "lucide-react";
 
+const API_BASE = "https://backend-production-5033.up.railway.app";
+
 export const ProfilePage = () => {
 	const { user, token } = useAuth();
 	const location = useLocation();
@@ -46,7 +48,7 @@ export const ProfilePage = () => {
 	const fetchOrders = async () => {
 		setLoadingOrders(true);
 		try {
-			const response = await fetch("/api/orders/user", {
+			const response = await fetch(`${API_BASE}/api/orders/user`, {
 				headers: { Authorization: `Bearer ${token}` },
 			});
 
@@ -79,7 +81,7 @@ export const ProfilePage = () => {
 
 		try {
 			// Connects directly to Claude's DELETE /api/orders/:id endpoint module
-			const response = await fetch(`/api/orders/${orderId}`, {
+			const response = await fetch(`${API_BASE}/api/orders/${orderId}`, {
 				method: "DELETE",
 				headers: { Authorization: `Bearer ${token}` },
 			});
@@ -105,7 +107,7 @@ export const ProfilePage = () => {
 		setGeneratedKey("");
 		try {
 			// Connects directly to Claude's secure POST /api/auth/api-keys developer endpoint module
-			const response = await fetch("/api/auth/api-keys", {
+			const response = await fetch(`${API_BASE}/api/auth/api-keys`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

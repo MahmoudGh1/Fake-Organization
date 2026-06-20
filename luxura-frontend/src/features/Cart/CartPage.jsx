@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { Trash2, Minus, Plus, ArrowRight, ShoppingBag, CreditCard } from "lucide-react";
 import { useState } from "react";
 
+const API_BASE = "https://backend-production-5033.up.railway.app";
+
 export const CartPage = () => {
 	const { cartItems, updateQuantity, removeFromCart, cartSubtotal, clearCart } = useCart();
 	const { user, token } = useAuth();
@@ -39,7 +41,7 @@ export const CartPage = () => {
 			};
 
 			// Dispatches the POST /api/orders request directly to the backend module
-			const response = await fetch("/api/orders", {
+			const response = await fetch(`${API_BASE}/api/orders`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

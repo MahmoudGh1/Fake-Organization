@@ -4,25 +4,30 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import * as SupportNest from "supportnest-server-sdk"
 
-import { connectDB } from "./config/db";
-import { setupSwagger } from "./config/swagger";
-import { errorHandler } from "./middlewares/error.middleware";
+import { connectDB } from "./config/db.js";
+import { setupSwagger } from "./config/swagger.js";
+import { errorHandler } from "./middlewares/error.middleware.js";
 
 // Route imports
-import authRoutes from "./modules/auth/auth.routes";
-import productRoutes from "./modules/products/product.routes";
-import orderRoutes from "./modules/orders/order.routes";
+import authRoutes from "./modules/auth/auth.routes.js";
+import productRoutes from "./modules/products/product.routes.js";
+import orderRoutes from "./modules/orders/order.routes.js";
 
 dotenv.config();
 
 const client = SupportNest.init("48bcbd5904bd9a3cc09abe0ba7f470878a8f58f3bb33aeb4f8b5c22737cc223b");
 
+console.log(client)
+
 const app: Application = express();
+
+const allowed_origins = ["https://gunuo.up.railway.app", process.env.CLIENT_URL || "", "http://localhost:3000"].filter(Boolean);
 
 // ─── Core Middleware ────────────────────────────────────────────────────────
 app.use(
 	cors({
-		origin: process.env.CLIENT_URL || "http://localhost:3000",
+		// origin: process.env.CLIENT_URL || "http://localhost:3000",
+		origin: allowed_origins,
 		credentials: true,
 	}),
 );

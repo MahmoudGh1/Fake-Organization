@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext(null);
+const API_BASE = "https://backend-production-5033.up.railway.app";
 
 export const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
@@ -15,7 +16,7 @@ export const AuthProvider = ({ children }) => {
 				return;
 			}
 			try {
-				const response = await fetch("/api/auth/me", {
+				const response = await fetch(`${API_BASE}/api/auth/me`, {
 					headers: {
 						Authorization: `Bearer ${token}`,
 					},

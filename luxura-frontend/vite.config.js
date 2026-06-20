@@ -10,7 +10,7 @@ export default defineConfig({
 	server: {
 		proxy: {
 			"/api": {
-				target: "http://localhost:5000", // Points to your Express server
+				target: "https://backend-production-5033.up.railway.app", // Points to your Express server
 				changeOrigin: true,
 				secure: false,
 			},
