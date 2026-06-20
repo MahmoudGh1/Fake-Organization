@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import * as authService from "./auth.service";
+import * as authService from "./auth.service.js";
 
 // ─── Cookie config ────────────────────────────────────────────────────────────
 const COOKIE_OPTIONS = {
