@@ -19,10 +19,13 @@ const client = SupportNest.init("48bcbd5904bd9a3cc09abe0ba7f470878a8f58f3bb33aeb
 
 const app: Application = express();
 
+const allowed_origins = ["https://api-production-e60c.up.railway.app", process.env.CLIENT_URL, "http://localhost:3000"]
+
 // ─── Core Middleware ────────────────────────────────────────────────────────
 app.use(
 	cors({
-		origin: process.env.CLIENT_URL || "http://localhost:3000",
+		// origin: process.env.CLIENT_URL || "http://localhost:3000",
+		origin: allowed_origins",
 		credentials: true,
 	}),
 );
