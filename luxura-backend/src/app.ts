@@ -17,6 +17,8 @@ dotenv.config();
 
 const client = SupportNest.init("48bcbd5904bd9a3cc09abe0ba7f470878a8f58f3bb33aeb4f8b5c22737cc223b");
 
+console.log(client)
+
 const app: Application = express();
 
 const allowed_origins = ["https://gunuo.up.railway.app", process.env.CLIENT_URL || "", "http://localhost:3000"].filter(Boolean);
