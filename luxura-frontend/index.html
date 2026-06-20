@@ -18,7 +18,7 @@
         <script>
             document.addEventListener("DOMContentLoaded", () => {
                 console.log(window);
-                fetch("http://localhost:5000/api/generate-widget-token")
+                fetch("https://backend-production-5033.up.railway.app/api/generate-widget-token")
                     .then((res) => res.json())
                     .then((data) => {
                         window.SupportNest.init({
