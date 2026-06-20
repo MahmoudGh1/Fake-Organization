@@ -19,7 +19,7 @@ const client = SupportNest.init("48bcbd5904bd9a3cc09abe0ba7f470878a8f58f3bb33aeb
 
 const app: Application = express();
 
-const allowed_origins = ["https://api-production-e60c.up.railway.app", process.env.CLIENT_URL || "", "http://localhost:3000"].filter(Boolean);
+const allowed_origins = ["https://gunuo.up.railway.app", process.env.CLIENT_URL || "", "http://localhost:3000"].filter(Boolean);
 
 // ─── Core Middleware ────────────────────────────────────────────────────────
 app.use(
