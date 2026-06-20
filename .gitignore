@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+coverage/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Prisma
+prisma/dev.db
+prisma/dev.db-journal
+
+# Generated files
+generated/
+*.tsbuildinfo
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Cache
+.cache/
+.turbo/
+
+# Package managers
+.pnp
+.pnp.js
+
+# Testing
+.nyc_output/
+
+# Railway
+.railway/
+
+# Supabase local development
+.supabase/
+
+# Docker
+docker-compose.override.yml

@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  /* This maps your custom luxury design styles seamlessly in v4 */
+  --color-luxury-bg: #fcfbfa;
+  --color-luxury-dark: #1a1a1a;
+  --color-luxury-gold: #af9263;
+  --color-luxury-muted: #707070;
+  --color-luxury-card: #f7f6f3;
+}
