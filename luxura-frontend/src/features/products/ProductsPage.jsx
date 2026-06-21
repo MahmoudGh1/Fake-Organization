@@ -21,11 +21,10 @@ export const ProductsPage = () => {
 			setLoading(true);
 			setError("");
 			try {
-				const response = await fetch(`${API_BASE}/api/products`);
+				const response = await fetch(`${API_BASE}/api/products?limit=100`);
 				if (!response.ok) throw new Error("Failed to load products");
 				const data = await response.json();
-				// Handles either a raw array or { products: [...] } shape
-				setProducts(Array.isArray(data) ? data : data.products || []);
+				setProducts(data.data?.products || []);
 			} catch (err) {
 				console.error("Error fetching products:", err);
 				setError("Could not load the catalog right now.");
