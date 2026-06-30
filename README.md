@@ -1,4 +1,4 @@
-# Gunuo / Luxura — Luxury Furniture E-Commerce Platform
+# Gunuo — Luxury Furniture E-Commerce Platform
 
 A full-stack e-commerce demo built to showcase a luxury furniture retail experience and to serve as an integration testbed for [SupportNest](https://github.com/) (an AI customer support widget). The project consists of a TypeScript/Express/MongoDB API and a React + Vite storefront.
 
@@ -22,7 +22,7 @@ A full-stack e-commerce demo built to showcase a luxury furniture retail experie
 
 ## Overview
 
-Gunuo (internally "Luxura") is a dummy luxury furniture brand used to demonstrate a production-style full-stack architecture:
+Gunuo is a dummy luxury furniture brand used to demonstrate a production-style full-stack architecture:
 
 - A REST API with product catalog, order management (with MongoDB transactions for stock integrity), dual-mode authentication (session JWT + long-lived API keys), and auto-generated Swagger documentation.
 - A React storefront with browsing, cart, checkout, an authenticated profile/orders dashboard, and a "Developer API Studio" for minting API keys.
