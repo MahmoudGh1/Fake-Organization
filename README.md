@@ -16,8 +16,6 @@ A full-stack e-commerce demo built to showcase a luxury furniture retail experie
 - [API Overview](#api-overview)
 - [Authentication](#authentication)
 - [Features](#features)
-- [Security Notes](#security-notes)
-
 ---
 
 ## Overview
