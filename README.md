@@ -2,8 +2,6 @@
 
 A full-stack e-commerce demo built to showcase a luxury furniture retail experience and to serve as an integration testbed for [SupportNest](https://github.com/) (an AI customer support widget). The project consists of a TypeScript/Express/MongoDB API and a React + Vite storefront.
 
-> ⚠️ This is a sandbox/demo project — see [Security Notes](#security-notes) before deploying publicly.
-
 ---
 
 ## Table of Contents
@@ -152,12 +150,3 @@ Two roles are supported: `customer` and `admin`. Admin-only routes are gated by 
 - **Soft delete for products** — products are deactivated (`isActive: false`) by default to preserve referential integrity with historical orders; a `?permanent=true` flag performs a hard delete.
 - **Developer API Key Studio** — authenticated users can mint, list, and revoke their own API keys directly from the frontend profile page.
 - **Embedded AI support widget** — the storefront loads the SupportNest widget script and initializes it with a per-session customer token fetched from the backend.
-
-## Security Notes
-
-This repo currently has a few items that should be addressed **before making it public or deploying it for real use**:
-
-1. **Hardcoded SupportNest SDK key** in `app.ts` (`SupportNest.init("...")`). Move this to `process.env.SUPPORTNEST_API_KEY` and add `.env` to `.gitignore`.
-2. **Hardcoded widget key** in `index.html` (`sk_...`). If this key is meant to be public-facing (i.e., safe for client-side embedding), confirm that with the SupportNest dashboard; otherwise it should be served from a backend-controlled config endpoint instead of being committed to source.
-3. **Frontend `API_BASE` is hardcoded** to a specific Railway deployment URL across multiple files. Consider moving this to a Vite env variable (`import.meta.env.VITE_API_BASE`) for portability across environments.
-4. Ensure `.env` files are excluded via `.gitignore` in both `backend/` and `frontend/` before pushing.
